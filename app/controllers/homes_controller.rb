@@ -5,13 +5,15 @@ class HomesController < ApplicationController
   # GET /photographs.json
   def index
     @photographs = Photograph.all
+    if params[:photo]
+      @photo = Photograph.find(params[:photo])
+    else
+      @photo = 'http://i.imgur.com/sehuv7w.jpg'
+    end
   end
 
   # GET /homes
   # GET /homes.json
-  def index
-    @homes = Home.all
-  end
 
   # GET /homes/1
   # GET /homes/1.json

@@ -5,4 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-photo_catagory.create({name: 'Landscape'}, {name: 'Portrait'}, {name: 'Event'})
+PhotoCatagory.create(name: 'Landscape')
+PhotoCatagory.create(name: 'Portrait')
+PhotoCatagory.create(rname: 'Event')
