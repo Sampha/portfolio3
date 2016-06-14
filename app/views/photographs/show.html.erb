@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @photograph.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @photograph.image %>
+</p>
+
+<p>
+  <strong>Descritpion:</strong>
+  <%= @photograph.descritpion %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @photograph.active %>
+</p>
+
+<p>
+  <strong>Is cover:</strong>
+  <%= @photograph.is_cover %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @photograph.order %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @photograph.price %>
+</p>
+
+<p>
+  <strong>Photo catagory:</strong>
+  <%= @photograph.photo_catagory %>
+</p>
+
+<%= link_to 'Edit', edit_photograph_path(@photograph) %> |
+<%= link_to 'Back', photographs_path %>

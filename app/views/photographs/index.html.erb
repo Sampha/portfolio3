@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Photographs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>Descritpion</th>
+      <th>Active</th>
+      <th>Is cover</th>
+      <th>Order</th>
+      <th>Price</th>
+      <th>Photo catagory</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @photographs.each do |photograph| %>
+      <tr>
+        <td><%= photograph.title %></td>
+        <td><%= photograph.image %></td>
+        <td><%= photograph.descritpion %></td>
+        <td><%= photograph.active %></td>
+        <td><%= photograph.is_cover %></td>
+        <td><%= photograph.order %></td>
+        <td><%= photograph.price %></td>
+        <td><%= photograph.photo_catagory %></td>
+        <td><%= link_to 'Show', photograph %></td>
+        <td><%= link_to 'Edit', edit_photograph_path(photograph) %></td>
+        <td><%= link_to 'Destroy', photograph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Photograph', new_photograph_path %>

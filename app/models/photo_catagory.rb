@@ -1,0 +1,2 @@
+class PhotoCatagory < ApplicationRecord
+end
