@@ -8,7 +8,7 @@ class HomesController < ApplicationController
     if params[:photo]
       @photo = Photograph.find(params[:photo])
     else
-      @photo = 'http://i.imgur.com/sehuv7w.jpg'
+      @photo = Photograph.find(4)
     end
   end
 

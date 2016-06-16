@@ -1,4 +1,27 @@
 <p id="notice"><%= notice %></p>
+<%= content_for :header_photo, @photograph.image %>
+
+
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading"><%= @photograph.title %></h1>
+                    <p class="intro-text"><%= @photograph.descritpion %><br>By Joel Davison</p>
+                </div>
+                <div class="col-md-4">
+
+                  <p> Buy a small print for <%= @photograph.price %>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
@@ -41,4 +64,4 @@
 </p>
 
 <%= link_to 'Edit', edit_photograph_path(@photograph) %> |
-<%= link_to 'Back', photographs_path %>
+<%= link_to 'Back', photographs_path %> -->

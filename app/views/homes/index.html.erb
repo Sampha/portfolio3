@@ -10,6 +10,9 @@
                     <a href="#download" class="btn btn-circle page-scroll">
                         <i class="fa fa-angle-double-down animated"></i>
                     </a>
+                   <!--  if params=photo.id then -->
+                   <!--  link_to"Buy a print of this photo" /photographs/id=params > -->
+                   <p> <%= link_to 'Buy a print of this photo', photograph_path(@photo) %> </p>
                 </div>
             </div>
         </div>
@@ -23,9 +26,9 @@
               <% @photographs.each do |photo| %>
                 <div class="col-md-4">
                   <div class="card card-inverse">
-                    <!-- <a href="#intro"> -->
-                    <img <% link_to photo.id %> class="card-img" src="<%= photo.image %>" width="375px" alt="photograph.catagory">
-                  <!-- </a> -->
+                    <a href="/?photo=<%= photo.id %>">
+                    <img class="card-img" src="<%= photo.image %>" width="375px" alt="photograph.catagory">
+                    </a>
                     <div class="card-img-overlay">
                       <h4 class"card-title"> <%= photo.title %> </h4>
                     </div>

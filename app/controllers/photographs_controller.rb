@@ -5,6 +5,7 @@ class PhotographsController < ApplicationController
   # GET /photographs.json
   def index
     @photographs = Photograph.all
+      @photo = Photograph.find(1)
   end
 
   # GET /photographs/1
