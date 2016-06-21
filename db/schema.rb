@@ -11,11 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614101829) do
+ActiveRecord::Schema.define(version: 20160621082809) do
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "homes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "photograph_id"
+    t.integer  "cart_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["photograph_id"], name: "index_line_items_on_photograph_id"
   end
 
   create_table "photo_catagories", force: :cascade do |t|

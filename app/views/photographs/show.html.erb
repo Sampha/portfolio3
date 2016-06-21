@@ -12,7 +12,8 @@
                 </div>
                 <div class="col-md-4">
 
-                  <p> Buy a small print for <%= @photograph.price %>
+                  <p> Buy a small print for <%= @photograph.price %> </p>
+                  <%= button_to 'Add to cart', line_items_path(photograph_id: @photograph), class: "btn btn-primary" %>
                 </div>
             </div>
         </div>

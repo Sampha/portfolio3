@@ -70,9 +70,11 @@
                         <li>
                             <a class="page-scroll" href="#contact">Contact</a>
                         </li>
+                        <% if @cart.line_items.any? %>
                         <li>
-                            <a href="#">Cart</a>
+                            <%= link_to  "Cart", @cart %>
                         </li>
+                        <% end %>
                         <li>
                             <%= link_to "New Photo", new_photograph_path %>
                         </li>
