@@ -13,6 +13,7 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
       @photographs = Photograph.all
+      @line_items = LineItem.all
   end
 
   # GET /carts/new

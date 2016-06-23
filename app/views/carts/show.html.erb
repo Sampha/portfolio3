@@ -15,7 +15,7 @@
                     <div class="card-img-overlay">
                       <h4 class"card-title"> <%= item.photograph.title %> </h4>
                       <p> <%= item.quantity %> in cart </p>
-                      <p> <%= number_to_currency (item.total_price) %> </p>
+                      <p> <%= number_to_currency (item.price * item.quantity) %> </p>
                     </div>
                   </div>
                 </div>

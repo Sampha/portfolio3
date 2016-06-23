@@ -12,6 +12,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/1
   # GET /line_items/1.json
   def show
+    @line_items = LineItem.all
   end
 
   # GET /line_items/new
