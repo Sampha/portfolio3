@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 PhotoCatagory.create(name: 'Landscape')
 PhotoCatagory.create(name: 'Portrait')
-PhotoCatagory.create(rname: 'Event')
+PhotoCatagory.create(name: 'Event')

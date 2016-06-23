@@ -13,7 +13,7 @@
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url( <%= content_for?(:header_photo) ? yield(:header_photo) : @photo.image %> ) no-repeat bottom center scroll;
+    background: url( <%= content_for?(:header_photo) ? yield(:header_photo) : "http://i.imgur.com/sehuv7w.jpg" %> ) no-repeat bottom center scroll;
     background-color: #1e1e1e;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -62,6 +62,9 @@
                         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                         <li class="hidden">
                             <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#download">Gallery</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#about">About</a>

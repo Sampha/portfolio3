@@ -11,14 +11,85 @@
                 <% @cart.line_items.each do |item| %>
                 <div class="col-md-4">
                   <div class="card card-inverse">
-                    <img class="card-img" src="<%= item.photograph.image %>" width="375px" alt="Cart item">
+                    <img class="card-img" src="<%= item.photograph.image %>" width="375px" height="250px" alt="Cart item">
                     <div class="card-img-overlay">
                       <h4 class"card-title"> <%= item.photograph.title %> </h4>
+                      <p> <%= item.quantity %> in cart </p>
+                      <p> <%= number_to_currency (item.total_price) %> </p>
                     </div>
                   </div>
                 </div>
                 <% end %>
             </div>
+            <h2> Total Price: <%= number_to_currency (@cart.total_price) %> </h2>
+            <%= button_to 'Empty cart', @cart, method: :delete,
+            data: {confirm: 'Are you sure?'} %>
         </div>
     </div>
 </header>
+
+<!-- Styles section -->
+
+<section id="download" class ="container content-section text-center">
+  <div class="row">
+    <% @photographs.each do |photo| %>
+      <div class="col-md-4">
+        <div class="card card-inverse">
+          <a href="<%= photograph_path(photo.id) %>">
+          <img class="card-img" src="<%= photo.image %>" width="100%" height="210px" alt="photograph.catagory">
+          </a>
+          <div class="card-img-overlay">
+            <h4 class"card-title"> <%= photo.title %> </h4>
+          </div>
+        </div>
+        </div>
+      <% end %>
+  </div>
+
+            <!-- About Section -->
+            <section id="about" class="container content-section text-center">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2>About the photographer</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed justo turpis, euismod vel luctus quis, mattis non nisi.</p>
+                        <p> Suspendisse eget ex facilisis, tempor risus et, porta tellus. </p>
+                        <p>Mauris in dolor vel orci bibendum scelerisque. Quisque nec finibus justo, id imperdiet nisi. Praesent at arcu vitae orci feugiat sollicitudin.</p>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- Contact Section -->
+            <section id="contact" class="container content-section text-center">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2>Contact Start Bootstrap</h2>
+                        <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+                        <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                        </p>
+                        <ul class="list-inline banner-social-buttons">
+                            <li>
+                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <div id="map"></div>
+
+            <!-- Footer -->
+            <footer>
+                <div class="container text-center">
+                    <p>Joel Davison 2016</p>
+                </div>
+            </footer>

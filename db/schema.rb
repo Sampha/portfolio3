@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621082809) do
+ActiveRecord::Schema.define(version: 20160623094709) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -26,8 +26,11 @@ ActiveRecord::Schema.define(version: 20160621082809) do
   create_table "line_items", force: :cascade do |t|
     t.integer  "photograph_id"
     t.integer  "cart_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "quantity",      default: 1
+    t.string   "size"
+    t.decimal  "price"
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
     t.index ["photograph_id"], name: "index_line_items_on_photograph_id"
   end
@@ -49,6 +52,9 @@ ActiveRecord::Schema.define(version: 20160621082809) do
     t.integer  "photo_catagory_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.decimal  "price_small"
+    t.decimal  "price_large"
+    t.decimal  "price_xlarge"
     t.index ["photo_catagory_id"], name: "index_photographs_on_photo_catagory_id"
   end
 

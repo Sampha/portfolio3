@@ -10,16 +10,96 @@
                     <h1 class="brand-heading"><%= @photograph.title %></h1>
                     <p class="intro-text"><%= @photograph.descritpion %><br>By Joel Davison</p>
                 </div>
-                <div class="col-md-4">
-
-                  <p> Buy a small print for <%= @photograph.price %> </p>
-                  <%= button_to 'Add to cart', line_items_path(photograph_id: @photograph), class: "btn btn-primary" %>
+                <div class="col-md-3">
+                  <p> Buy a small sized print for <%= number_to_currency(@photograph.price_small) %> </p>
+                  <%= button_to 'Add to cart', line_items_path(photograph_id: @photograph, size: "small", price: @photograph.price_small), class: "btn btn-primary" %>
+                </div>
+                <div class="col-md-3">
+                  <p> Buy a regular sized print for <%= number_to_currency(@photograph.price) %> </p>
+                  <%= button_to 'Add to cart', line_items_path(photograph_id: @photograph, size: "regular", price: @photograph.price), class: "btn btn-primary" %>
+                </div>
+                <div class="col-md-3">
+                  <p> Buy a large sized print for <%= number_to_currency(@photograph.price_large) %> </p>
+                  <%= button_to 'Add to cart', line_items_path(photograph_id: @photograph, size: "large", price: @photograph.price_large), class: "btn btn-primary" %>
+                </div>
+                <div class="col-md-3">
+                  <p> Buy an extra large sized print for <%= number_to_currency(@photograph.price_xlarge) %> </p>
+                  <%= button_to 'Add to cart', line_items_path(photograph_id: @photograph, size: "xlarge", price: @photograph.price_xlarge), class: "btn btn-primary" %>
                 </div>
             </div>
         </div>
+        <br>
+        <a href="#download" class="btn btn-circle page-scroll">
+            <i class="fa fa-angle-double-down animated"></i>
+        </a>
     </div>
 </header>
 
+<!-- Styles section -->
+
+<section id="download" class ="container content-section text-center">
+  <div class="row">
+    <% @photographs.each do |photo| %>
+      <div class="col-md-4">
+        <div class="card card-inverse">
+          <a href="<%= photograph_path(photo.id) %>">
+          <img class="card-img" src="<%= photo.image %>" width="100%" height="210px" alt="photograph.catagory">
+          </a>
+          <div class="card-img-overlay">
+            <h4 class"card-title"> <%= photo.title %> </h4>
+          </div>
+        </div>
+        </div>
+      <% end %>
+  </div>
+
+            <!-- About Section -->
+            <section id="about" class="container content-section text-center">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2>About the photographer</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed justo turpis, euismod vel luctus quis, mattis non nisi.</p>
+                        <p> Suspendisse eget ex facilisis, tempor risus et, porta tellus. </p>
+                        <p>Mauris in dolor vel orci bibendum scelerisque. Quisque nec finibus justo, id imperdiet nisi. Praesent at arcu vitae orci feugiat sollicitudin.</p>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- Contact Section -->
+            <section id="contact" class="container content-section text-center">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2>Contact Start Bootstrap</h2>
+                        <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+                        <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                        </p>
+                        <ul class="list-inline banner-social-buttons">
+                            <li>
+                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <div id="map"></div>
+
+            <!-- Footer -->
+            <footer>
+                <div class="container text-center">
+                    <p>Joel Davison 2016</p>
+                </div>
+            </footer>
 
 
 <!-- <p id="notice"><%= notice %></p>

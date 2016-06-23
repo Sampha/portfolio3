@@ -8,7 +8,7 @@ class HomesController < ApplicationController
     if params[:photo]
       @photo = Photograph.find(params[:photo])
     else
-      @photo = Photograph.find(4)
+      @photo = Photograph.find(1)
     end
   end
 

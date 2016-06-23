@@ -11,6 +11,7 @@ class PhotographsController < ApplicationController
   # GET /photographs/1
   # GET /photographs/1.json
   def show
+    @photographs = Photograph.all
   end
 
   # GET /photographs/new
@@ -70,6 +71,6 @@ class PhotographsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photograph_params
-      params.require(:photograph).permit(:title, :image, :descritpion, :active, :is_cover, :order, :price, :photo_catagory_id)
+      params.require(:photograph).permit(:title, :image, :descritpion, :active, :is_cover, :order, :price_small, :price, :price_large, :price_xlarge, :photo_catagory_id)
     end
 end
