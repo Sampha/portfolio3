@@ -1,0 +1,14 @@
+  <div class="row">
+    <% @photographs.each do |photo| %>
+      <div class="col-md-4">
+        <div class="card card-inverse">
+          <a href="<%= photograph_path(photo.id) %>">
+          <img class="card-img" src="<%= photo.image %>" width="100%" height="210px" alt="photograph.catagory">
+          </a>
+          <div class="card-img-overlay">
+            <h4 class"card-title"> <%= photo.title %> </h4>
+          </div>
+        </div>
+        </div>
+      <% end %>
+  </div>

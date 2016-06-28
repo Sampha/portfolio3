@@ -75,7 +75,8 @@
                         </li>
                         <% if @cart.line_items.any? %>
                         <li>
-                            <%= link_to  "Cart", @cart %>
+                            <a href="#nav_cart" data-toggle="collapse">Cart</a>
+                            <!--link_to  "Cart", @cart-->
                         </li>
                         <% end %>
                         <% if user_signed_in? %>
@@ -92,9 +93,14 @@
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
-            <!-- /.container -->
+            <!-- /.container --> 
         </nav>
 
+<div id="nav_cart" class="collapse">
+  <div class="CartContainer">
+    <%= render "carts/cart" %>
+  </div>
+</div>
 
     <%= yield %>
   </body>

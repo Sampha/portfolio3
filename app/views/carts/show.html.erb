@@ -8,22 +8,11 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h1 class="brand-heading">Your Cart</h1>
                 </div>
-                <% @cart.line_items.each do |item| %>
-                <div class="col-md-4">
-                  <div class="card card-inverse">
-                    <img class="card-img" src="<%= item.photograph.image %>" width="375px" height="250px" alt="Cart item">
-                    <div class="card-img-overlay">
-                      <h4 class"card-title"> <%= item.photograph.title %> </h4>
-                      <p> <%= item.quantity %> in cart </p>
-                      <p> <%= number_to_currency (item.price * item.quantity) %> </p>
-                    </div>
-                  </div>
-                </div>
-                <% end %>
+                    <%= render "cart" %>
             </div>
             <h2> Total Price: <%= number_to_currency (@cart.total_price) %> </h2>
             <%= button_to 'Empty cart', @cart, method: :delete,
-            data: {confirm: 'Are you sure?'} %>
+            data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
         </div>
     </div>
 </header>
@@ -31,20 +20,7 @@
 <!-- Styles section -->
 
 <section id="download" class ="container content-section text-center">
-  <div class="row">
-    <% @photographs.each do |photo| %>
-      <div class="col-md-4">
-        <div class="card card-inverse">
-          <a href="<%= photograph_path(photo.id) %>">
-          <img class="card-img" src="<%= photo.image %>" width="100%" height="210px" alt="photograph.catagory">
-          </a>
-          <div class="card-img-overlay">
-            <h4 class"card-title"> <%= photo.title %> </h4>
-          </div>
-        </div>
-        </div>
-      <% end %>
-  </div>
+  <%= render "photographs/photo_loop" %>
 
             <!-- About Section -->
             <section id="about" class="container content-section text-center">
