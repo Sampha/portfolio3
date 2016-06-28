@@ -4,11 +4,47 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-CartContainer {
-    height: 300px;
-    width: auto;
-    overflow:scroll;
-    background-color: rgba(000,000,000,.7);
+ .CartContainerOuter {
+     width: 100%;
+     height: auto;
+     background-color: rgba(000,000,000,.7);
+     overflow-x: auto;
+     white-space: nowrap;
+ }
+
+ .CartContainerInner {
+     overflow: auto;
+ }
+
+.cart_col {
+  float: none;
+  display: inline-block;
+}
+
+.Cart_Checkout {
+  position: fixed;
+  left: 1vh;
+  top: 28vh;
+}
+
+::-webkit-scrollbar {
+   background-color: #29293d;
+}
+
+::-webkit-scrollbar-track {
+ background-color: #29293d;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: #666699;
+}
+
+::-webkit-scrollbar-button {
+background-color: #3d3d5c;
+}
+
+::-webkit-scrollbar-corner {
+
 }
 
 body {

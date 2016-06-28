@@ -1,7 +1,8 @@
                 <% @cart.line_items.each do |item| %>
-                <div class="col-md-4">
+              <div class="cart_col">
+                <div>
                   <div class="card card-inverse">
-                    <img class="card-img" src="<%= item.photograph.image %>" width="375px" height="250px" alt="Cart item">
+                    <img class="card-img" src="<%= item.photograph.image %>" width="375px" height="250px" alt="item.photograph.title">
                     <div class="card-img-overlay">
                       <h4 class"card-title"> <%= item.photograph.title %> </h4>
                       <p> <%= item.quantity %> <%= item.size %> <%= "print".pluralize(item.quantity) %> in cart </p>
@@ -9,11 +10,6 @@
                     </div>
                   </div>
                 </div>
+              </div>
+
                 <% end %>
-                
-<div class="container">
- <h2> Total Price: <%= number_to_currency (@cart.total_price) %> </h2>
-      <%= button_to 'Empty cart', @cart, method: :delete,
-      data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
-      <%= button_to 'Checkout(placeholder)', "#", class: "btn btn-info" %>
-</div>

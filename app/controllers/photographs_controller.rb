@@ -1,6 +1,6 @@
 class PhotographsController < ApplicationController
   before_action :set_photograph, only: [:show, :edit, :update, :destroy]
-
+load_and_authorize_resource
   # GET /photographs
   # GET /photographs.json
   def index

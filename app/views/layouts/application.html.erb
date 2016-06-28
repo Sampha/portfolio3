@@ -20,6 +20,11 @@
     background-size: cover;
     -o-background-size: cover;
 }
+
+
+
+
+
 </style>
 
 
@@ -31,7 +36,7 @@
 
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
@@ -84,21 +89,26 @@
                             <%= link_to "New Photo", new_photograph_path %>
                         </li>
 
-                        
+
                         <li>
-                            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
+                            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
                         </li>
                         <% end %>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
-            <!-- /.container --> 
+            <!-- /.container -->
         </nav>
 
 <div id="nav_cart" class="collapse">
-  <div class="CartContainer">
-    <%= render "carts/cart" %>
+  <div class="CartContainerOuter">
+    <div class="CartContainerInner">
+      <%= render "carts/cart" %>
+    </div>
+    <div class="Cart_Checkout">
+      <%= render "carts/cart_price" %>
+    </div>
   </div>
 </div>
 

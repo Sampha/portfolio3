@@ -34,7 +34,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to photographs_url, notice: 'Print added to cart!' }
+        format.html { redirect_to photograph_path(photograph), notice: 'Print added to cart!' }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
