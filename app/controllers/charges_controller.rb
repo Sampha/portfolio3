@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
   def create
     # Amount in cents
     # @amount = 500
+    @total_price = @cart.total_price * 100
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -14,9 +15,9 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => (@cart.total_price * 100).to_int,
+      :amount      => @total_price.to_int,
       :description => 'Rails Stripe customer',
-      :currency    => 'usd'
+      :currency    => 'aud'
     )
 
     if charge[:paid] == true

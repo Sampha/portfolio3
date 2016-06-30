@@ -1,0 +1,31 @@
+<%= form_for(order) do |f| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %>
+        prohibited this order from being saved:</h2>
+
+        <ul>
+          <% order.errors.full_messages.each do |message| %>
+          <li><%- message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+
+
+      <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_VRz82Z9yiImqqlFq7rpVhuIw"
+    data-amount="999"
+    data-name="Demo Site"
+    data-description="Widget"
+    data-image="/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true"
+    data-currency="aud">
+  </script>
+
+      <%# f.submit 'Place Order' %>
+    </div>
+    <% end %>

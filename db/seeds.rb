@@ -8,3 +8,7 @@
 PhotoCatagory.create(name: 'Landscape')
 PhotoCatagory.create(name: 'Portrait')
 PhotoCatagory.create(name: 'Event')
+
+Shipping.create(name: 'Domestic Standard')
+Shipping.create(name: 'Domestic Express')
+Shipping.create(name: 'International')

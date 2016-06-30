@@ -1,10 +1,9 @@
 class LineItem < ApplicationRecord
-  belongs_to :photograph
+  belongs_to :order, optional: true
+  belongs_to :photograph, optional: true
   belongs_to :cart
 
-def total_price
-  price * quantity
-end
-
-
+  def total_price
+    price * quantity
+  end
 end
